@@ -1,0 +1,239 @@
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Oswald&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="bg-dark">
+        <button mat-icon-button [routerLink]="'/home'">
+      <img class="marca" src="assets/img/logo/marca.ico" />
+    </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<body>
+    <div class="title">
+        <h3>Torres de villamonica</h3>
+    </div>
+    <div class="container">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+
+        <!-- Swiper -->
+        <app-swipper-t></app-swipper-t>
+
+        <div class="title1">
+            <h5 class="h5">Apartamento Completo - Anfitrión: Abel</h5>
+            <span class="span">11 huéspedes · 4 habitación · 10 cama · 2 baño</span>
+            <img class="img" src="assets/img/logo/avatar.jpg" />
+            <hr class="hr" />
+
+            <div>
+                <div>
+                    <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/home.svg " />
+                    <span style="padding-left: 20px ;">Alojamiento entero</span>
+                    <h6 style="
+              color: gray;
+              padding-left: 51px;
+              font-size: 13px;
+              margin-top: -5px;
+            ">
+                        Dispondrás de toda la vivienda (Apto) para ti.
+                    </h6>
+                </div>
+                <div class="logos">
+                    <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/clean.svg " />
+                    <span style="padding-left: 20px">Limpio y ordenado</span>
+                    <h6 style="
+              color: gray;
+              padding-left: 51px;
+              font-size: 13px;
+              margin-top: -5px;
+            ">
+                        12 huéspedes recientes han dicho que este alojamiento está impecable.
+                    </h6>
+                </div>
+                <div class="logos">
+                    <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/pay.svg " />
+                    <span style="padding-left: 20px">Pagos</span>
+                    <h6 style="color: gray;
+                    padding-left: 51px;
+                    font-size: 13px;
+                    margin-top: -5px;">Cancelación gratuita durante 48 horas</h6>
+
+                </div>
+            </div>
+            <hr class="hr1" />
+
+            <div class="col-md-7">
+                <p>
+                    Se alquila apartamento para temporada de vacaciones por la unimagdalena cuenta con 3 cuartos, 7 camas, 2 baños se encuentra completamente amoblada con nevera, lavadora y utencilios de cocina. Incluye tv y wifi.
+                </p>
+
+                <div slot="start" style="margin-top: 2rem">
+                    <p class="p">Catedral - 2min</p>
+                    <p class="p">Juan Valdez - 2min</p>
+                    <p class="p">Parque de los novios- 5min</p>
+                    <p class="p">Marina - 10 min</p>
+                </div>
+            </div>
+
+            <hr class="hr2" />
+
+            <div class="title2">
+                <h3>Servicios</h3>
+            </div>
+
+            <div style="overflow: hidden;">
+                <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/aire.svg " />
+                <span style="padding-left: 20px ;">Aire acondicionado</span>
+
+                <div class="logos">
+                    <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/cocina.svg" />
+                    <span style="padding-left: 20px">Utencilios de cocina</span>
+                </div>
+                <div class="logos">
+                    <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/lavadora.svg" />
+                    <span style="padding-left: 20px">Lavadora</span>
+                </div>
+
+                <div class="service">
+                    <div class="logos">
+                        <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/puerta.svg" />
+                        <span style="padding-left: 20px">Entrada independiente</span>
+                    </div>
+
+                    <div class="logos1">
+                        <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/tv.svg" />
+                        <span style="padding-left: 20px">Television</span>
+                    </div>
+
+                    <div class="logos2">
+                        <img style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            " src="assets/img/logo/iconos/wifi.svg" />
+                        <span style="padding-left: 20px">Wifi</span>
+                    </div>
+                    <hr class="hr3" />
+                    <app-cardcontac></app-cardcontac>
+                    <hr class="hr3" />
+
+                    <div class="title3">
+                        <h3>Ubicacion</h3>
+                    </div>
+
+                    <div class="col-md-12">
+                        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.482991516125!2d-74.18905068519518!3d11.225836992017493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4f5a5b24fb07f%3A0xb2cb35bcc3e481ad!2sUniversidad%20del%20Magdalena!5e0!3m2!1ses-419!2sco!4v1637873305474!5m2!1ses-419!2sco"
+                            width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+    </script>
+</body>
+<footer class="py-5 bg-dark">
+    <div>
+        <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+                <a href="#">
+                    <img class="face" src="assets/img/logo/redes/Facebook.jpg" />
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">
+                    <img class="insta" src="assets/img/logo/redes/instagram.png" />
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">
+                    <img class="twit" src="assets/img/logo/redes/twiter.png" />
+                </a>
+            </li>
+        </ul>
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+    </div>
+    <!-- /.container -->
+</footer>
