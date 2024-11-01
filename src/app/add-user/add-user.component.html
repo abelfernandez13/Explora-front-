@@ -1,0 +1,92 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  
+  
+  <mat-icon class="icon" >add</mat-icon>Agregar anuncio
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="row modal-body">         
+          <div class="card-body">
+
+     <mat-horizontal-stepper #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+                <form [formGroup]="firstFormGroup" >
+                  <ng-template matStepLabel>Fill out your name</ng-template>
+                  <mat-form-field>                  
+                  <div class="form-group">   
+                      <mat-label>title</mat-label>
+                      <input type="text" matInput id="title" placeholder="Photo's Title" #title required formControlName="firstCtrl">
+                </div>
+
+                
+                <div class="form-group">   
+                  <mat-label>description</mat-label>
+                  <input type="text" matInput id="description" placeholder="Phots's description" #description required formControlName="firstCtrl">
+              </div>
+
+
+                <div class="form-group">
+                    <input type="number" matInput formControlName="firstCtrl" placeholder="Precio" #precio required>
+                </div>
+
+                <div class="form-group">
+                              <input type="number" matInput formControlName="firstCtrl" placeholder="habitaciones" #habitaciones required>
+                            </div>
+             </mat-form-field>
+                  <div>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                </form>
+              </mat-step>
+
+              <mat-step [stepControl]="secondFormGroup" optional>
+                <form [formGroup]="secondFormGroup">
+                  <ng-template matStepLabel>Fill out your address</ng-template>
+                  <mat-form-field>   
+           <div class="form-group">
+              <input type="number" matInput formControlName="secondCtrl" placeholder="huespedes" #huespedes required>
+              </div> 
+
+              <input type="file" class="d-none" formControlName="secondCtrl" (change)="onPhotoSelected($event)" #photoInput>
+                <img [src]="photoSelected || 'assets/img/image.jpg'" class="img-fluid" alt="No image"
+                    (click)="photoInput.click()">
+
+                  </mat-form-field>
+                  <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                  </div>
+                      <button class="btn btn-primary btn-block">
+                    Upload
+                </button>
+                </form>
+              </mat-step>
+              <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+              </mat-step>
+
+            </mat-horizontal-stepper>
+
+        
+        </div>
+        <div class="modal-footer">
+          <button (click)="enviarDatos(title, description,precio,habitaciones,huespedes)" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>

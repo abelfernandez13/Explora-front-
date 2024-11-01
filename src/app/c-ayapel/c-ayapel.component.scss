@@ -1,0 +1,298 @@
+* {
+    .container {
+        width: 100%;
+    }
+}
+
+.ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 83%;
+    margin-left: 49px;
+    border-radius: 13px;
+    height: 512px;
+}
+
+.ngx-gallery-thumbnails-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    // margin-left: 405px;
+}
+
+.ngx-gallery-thumbnails {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transform: translateX(0);
+    transition: transform .5s ease-in-out;
+    will-change: transform;
+    margin-top: 7px;
+}
+
+.ngx-gallery-animation-slide.ngx-gallery-image.ngx-gallery-active {
+    border-top-left-radius: calc(16.25px - 1px);
+    border-top-right-radius: calc(16.25px - 1px);
+    transform: translateX(0);
+}
+
+.ngx-gallery-thumbnails-wrapper {
+    width: 101%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    margin-top: 7px;
+}
+
+@media (min-width: 996px) and (max-width: 1500px) {
+    .container {
+        max-width: 947px;
+    }
+    .subtitle {
+        color: gray;
+        padding-left: 51px;
+        font-size: 13px;
+        margin-top: -5px;
+    }
+    .swiper-container {
+        display: none;
+    }
+    .service {
+        flex-direction: column;
+        box-sizing: border-box;
+        place-content: center flex-start;
+        float: left;
+    }
+}
+
+.bg-dark {
+    background: rgba(255, 255, 255, 1);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 7%, rgba(73, 245, 233, 0.89) 48%, rgba(104, 192, 186, 0.78) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(0%, rgba(255, 255, 255, 1)), color-stop(7%, rgba(255, 255, 255, 0.98)), color-stop(48%, rgba(104, 192, 186, 0.89)), color-stop(100%, rgba(104, 192, 186, 0.78)));
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 7%, rgba(100, 224, 216, 0.89) 48%, rgba(6, 239, 223, 0.78) 100%);
+    ;
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 7%, rgba(100, 224, 216, 0.89) 48%, rgba(6, 239, 223, 0.78) 100%);
+    ;
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 7%, rgba(100, 224, 216, 0.89) 48%, rgba(6, 239, 223, 0.78) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 7%, rgba(100, 224, 216, 0.89) 48%, rgba(6, 239, 223, 0.78) 100%);
+    ;
+}
+
+.marca {
+    width: 151px;
+    height: 61px;
+    border-radius: 57%;
+    margin-top: -8px;
+}
+
+.thumbnails {
+    right: 50%;
+}
+
+.title {
+    align-items: center;
+    // font-family: "Galada", cursive;
+    margin-top: 17px;
+    width: 96%;
+    margin-left: auto;
+    padding-left: 14px;
+}
+
+.title1 {
+    font-family: inherit;
+    text-align: inherit;
+    font-weight: initial;
+    margin-top: 36px;
+}
+
+.title2 {
+    align-items: center;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 38px;
+    margin-left: 0px;
+}
+
+.hr {
+    margin-top: 32px;
+    width: 511px;
+    margin-bottom: 1rem;
+    /* padding-left: 8px; */
+    margin-right: 489px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hr1 {
+    width: 511px;
+    margin-bottom: 1rem;
+    /* padding-left: 8px; */
+    margin-right: 489px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hr2 {
+    margin-top: 2rem;
+    width: 511px;
+    margin-bottom: 1rem;
+    /* padding-left: 8px; */
+    margin-right: 489px;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.hr3 {
+    margin-top: 2rem;
+    width: 979px;
+    margin-bottom: 1rem;
+    border: 0;
+    margin-left: -51px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.h5 {
+    font-size: large;
+}
+
+.span {
+    font-size: smaller;
+}
+
+.logos {
+    margin-top: 6px;
+}
+
+.logos1 {
+    margin-top: 2px;
+    margin-right: 91px;
+}
+
+.logos2 {
+    margin-top: 2px;
+    margin-right: 134px;
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none;
+    width: 46px;
+    height: 45px;
+    margin-top: 0px;
+    float: right;
+}
+
+.p {
+    margin-top: -14px;
+}
+
+p {
+    margin-top: 34px;
+    margin-bottom: 1rem;
+}
+
+.map {
+    margin-left: 3px;
+    // margin-top: 5px;
+}
+
+.title3 {
+    /* align-items: center; */
+    font-family: "Heebo", sans-serif;
+    font-family: "Oswald", sans-serif;
+    margin-top: 6px;
+    /* margin-left: 3px; */
+    margin-right: 685px;
+}
+
+.face {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 309%;
+}
+
+.insta {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+
+.twit {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    text-align: center;
+    margin-top: 9px;
+}
+
+.py-5 {
+    margin-top: 10%;
+    margin-left: 0px;
+    width: 100%;
+}
+
+@media(min-width: 320px) and (max-width: 996px) {
+    .service {
+        flex-direction: column;
+        box-sizing: border-box;
+        place-content: center flex-start;
+    }
+    .marca {
+        width: 81px;
+        height: 40px;
+        border-radius: 51%;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 0px;
+    }
+    .mat-toolbar-row[_ngcontent-ure-c189] {
+        height: 40px;
+    }
+    .ngx-gallery {
+        display: none;
+    }
+    .swiper-container {
+        width: 100%;
+        height: auto;
+    }
+    .slide {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+    }
+    .w-100 {
+        width: 100%;
+        margin: auto;
+        max-width: 100%;
+    }
+    h3 {
+        font-size: calc(1em + 1vw);
+        line-height: 1em;
+        padding-left: 1px;
+        margin: 1em;
+    }
+}
+
+@media (min-width:450px) and (max-width:1500px) {
+    .card4 {
+        display: contents;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+        margin-right: initial;
+    }
+}

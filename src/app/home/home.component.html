@@ -1,0 +1,225 @@
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Oswald&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+           <img class="marca" src="assets/img/logo/marca.ico" />
+    </button>
+        <div class="btn-whatsapp">
+            <a href="https://api.whatsapp.com/send?phone=+57 3007132665" target="_blank">
+                <img style="width: 37px;" src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+            </a>
+        </div>
+        <app-add-user></app-add-user>
+        <app-user></app-user>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div>
+    <app-slide></app-slide>
+</div>
+
+
+<body>
+
+ <app-cardcontac class="card10"></app-cardcontac>
+
+    <div class="row">
+        <mat-card  style="top: -141px;" class="card4">
+            <div class="content" style="display: flex; justify-content: center;margin-top: -15px;">
+                <div style="width: 20px; padding-right: 0;" class="col-md-5 col-sm-2" id="accordionExample">
+                    <mat-card class="card6 col-md-2 col-sm-2.5">
+                        <mat-card-title>
+                            <h5 class="title6"> Presupuesto</h5>
+                            <button class="btn col-md-8" type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne"></button>
+
+                            <div id="collapseOne1" data-keyboard="false" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div _ngcontent-ppg-c159="" class="card-range col-md-12">
+                                    <ngx-slider  [(value)]="minValue" [(highValue)]="maxValue" [options]="options">
+                                    </ngx-slider>
+                                </div>
+                            </div>
+                        </mat-card-title>
+                    </mat-card>
+                    <mat-card class="card1 col-md-1">
+                        <h2 class="titul6">
+                            Adultos y Niños
+                            <div>
+                                <span class="addhusp">{{ count2 }} Adultos | {{ count3 }} Niños
+                              </span>
+                            </div> 
+                            </h2>
+                            <button class="btn col-md-8" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"></button>
+                      
+                        <div id="collapseOne" data-keyboard="false" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div _ngcontent-ppg-c159="" class="card-body col-md-12" style="
+                                width: 290px;
+                                max-width: 356px;
+                                padding-right: 0px;
+                                margin-right: 30px;
+                                margin-top: -4px;
+                        ">
+                                <div class="caja">
+                                    <div>
+                                        <h5 class="adultos">Habitaciones</h5>
+                                        <p class="subtitle">
+                                            A partir de 15 años
+                                        </p>
+                                    </div>
+                                    <div class="circulos">
+                                        <button name="button" (click)="clickCount()" class="resta" mat-mini-fab no-border [disabled]="active">
+                      <mat-icon no-border>remove</mat-icon>
+                    </button>
+                                        <span>{{ count2 }}</span>
+
+                                        <button name="" (click)="clickCount1()" mat-mini-fab class="suma">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                                    </div>
+                                </div>
+                                <hr style="width: 255px;
+                                margin-left: -6px;margin-top: 28px;" />
+
+                                <div class="caja">
+                                    <div>
+                                        <h5 class="adultos">Niño</h5>
+                                        <p class="subtitle">
+                                            De 2 a 14 años
+                                        </p>
+                                    </div>
+                                    <div class="circulos1">
+                                        <button name="" (click)="clickCount2()" class="resta" mat-mini-fab no-border [disabled]="active1">
+                                        <mat-icon no-border>remove</mat-icon>
+                                        </button>
+                                        <span>{{ count3 }}</span>
+                                        <button name="" (click)="clickCount3()" mat-mini-fab class="suma">
+                                        <mat-icon>add</mat-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <mat-card class="card2 col-md-3 col-sm-2.5">
+                    <div>
+                        <h2 class="titulo">Fechas</h2>
+                    </div>
+                    <input type="text" style="font-size: 13px;
+                    height: 32px;
+                    font-weight: inherit;
+                    width: 164px;
+                    color: gray;
+                    height: 30px;
+                    margin-left: 18px;
+                    margin-top: 0;
+                    margin-right: 2px;" placeholder="Llegada | Salida" class="form-control" bsDaterangepicker [bsConfig]="{ isAnimated: true }" [bsConfig]=" datePickerConfig" datepicker-options="{showWeeks:false,minDate:today}">
+                </mat-card>
+
+                <!-- <div (click)="verIdpar()" type="pointer" class="card-search col-md-1" style="width:20%; height:30px;cursor: pointer;background-color: aqua;">
+                    <span style="margin-top: 7px;" class="fa fa-search"></span>
+                </div> -->
+
+            </div>
+        </mat-card>
+        <div>
+            <h1 class="title">Alojamiento Vacacional</h1>
+        </div>
+        <!-- <app-mastercards></app-mastercards> -->
+<div class="container-fluid col-12" style="display:contents" id="sec-1">
+    <div class="d-flex justify-content-center flex-wrap">
+        <div *ngFor="let t of photos" data-aos="fade-up" class="col-3 target">
+            <div class="contenedor_targeta">
+                <!-- <a href="casafaroles.html"> -->
+                <figure class="img-fluid mat-t-content" style="
+                width: 218px;
+                height: 240px;
+                border-top-left-radius: calc(16.25px - 1px);
+                border-top-right-radius: calc(16.25px - 1px);
+                border-bottom-left-radius: calc(17.25px - 1px);
+                border-bottom-right-radius: calc(17.25px - 1px);
+                padding-right: 24px;
+                padding-left: 0px;
+                float: left;
+                ">
+                    <img class="frontal" [src]="'http://localhost:4000/' + t.imagePath" />
+                    <figcaption class="trasera">
+                        <h5 class="titul">{{t.title}}</h5>
+                        <h6 class="subtit">
+                            <mat-icon style="display: contents;" slot="start">place</mat-icon>{{t.description}}
+                        </h6>
+                        <div class="col-12" style="display: inline-block;
+                        padding-left: 34px;
+                        margin-top: 0px;" class="icon">
+
+                            <img style="margin-left: 0px;
+                            width: 95px;
+                            height: 68px;
+                            padding-left: 1px;
+                            margin-top: 0px;" src="assets/img/logo/cama11.png" />
+                            <span style="padding-left: 0px;margin-left: -50px;">{{t.huespedes}}</span>
+                           
+                           <div style="width: 162px;
+                           display: inherit;">
+                           <img style="width: 39px;
+                           height: 34px;
+                           margin-top: -11px;" src="assets/img/logo/baño.png" />
+                            <span style="width: 27px;
+                                margin-left: 5px;">{{t.habitaciones}}</span>
+                            </div>
+                        </div>
+                        <!-- <p class="titul1">Descubre en esta casa la comodidad que buscabas para vivir la mejor experiencia en la ciudad de santa marta. -->
+                        <!-- </p> -->
+                        <p style="cursor: pointer" class="titul4" routerLink="/casa-sanjose">
+                            ${{t.precio}} COP noche
+                        </p>
+                    </figcaption>
+                </figure>
+                <!-- </a> -->
+            </div>
+        </div>
+        
+   <h1 class="my-5">Lugares que puedes visitar</h1>
+
+        <mat-card data-aos="fade-up" *ngFor="let t of lugares" class="col-4 example-card m-4">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title style="font-size: 16px;
+              margin-top: 8px;
+              margin-left: 0px;position:static;">{{t.name}}</mat-card-title>
+              </mat-card-header>
+            <img mat-card-image src="assets/img/{{t.imagen}}" alt="">
+            <mat-card-content>
+              <p>
+                {{t.description}}
+              </p>
+            </mat-card-content>
+          </mat-card>
+ 
+  </div>
+</div>
+<footer class="py-5 bg-dark w-100">
+    <div class="position-footer">
+        
+            <ul style="float: left;" class="list-inline social-buttons w-100">
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="face" src="assets/img/logo/redes/Facebook.jpg">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="insta" src="assets/img/logo/redes/instagram.png">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="twit" src="assets/img/logo/redes/twiter.png">
+                    </a>
+                </li>
+            </ul>        
+       </div>
+    </footer>

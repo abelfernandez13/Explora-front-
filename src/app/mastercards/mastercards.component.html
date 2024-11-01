@@ -1,0 +1,141 @@
+<!-- <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Oswald&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+<div class="container-fluid" style="display:inline-block" id="sec-1">
+            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+        <div *ngFor="let t of listaTarjetas" class="col-3">
+            <div class="contenedor_targeta">  
+                <figure class="img-fluid mat-t-content" style="
+                width: 258px;
+                height: 203px;
+                border-top-left-radius: calc(16.25px - 1px);
+                border-top-right-radius: calc(16.25px - 1px);
+                border-bottom-left-radius: calc(17.25px - 1px);
+                border-bottom-right-radius: calc(17.25px - 1px);
+                padding-right: 24px;
+                padding-left: 0px;
+                float: left;
+                ">
+                    <img class="frontal" src="assets/img/{{t.imagen}}" />
+                    <figcaption class="trasera">
+                        <h5 class="titul">{{t.name}}</h5>
+                        <h6 class="subtit">
+                            <mat-icon style="display: contents;" slot="start">place</mat-icon>Carrera 21A1#29G-37 Barrio Los Faroles
+                        </h6>
+                        <div style="display: inline-block;
+                        margin-top: 0px;;" class="icon">
+
+                            <img style="margin-left: -4px;
+                            width: 23px;
+                            height: 38px;
+                            padding-left: 1px;
+                            margin-top: -11px;" src="assets/img/logo/cama11.svg" />
+                            <span style="padding-left: 6px;">{{t.adultos}}</span>
+                            <img style="width:52px;
+                            height: 21px;
+                            margin-top: -11px;
+                            padding-left: 0px;" src="assets/img/logo/baño.svg" />
+                            <span style="width: 27px;
+                            margin-left: -11px;">{{t.ninos}}</span>
+                        </div>
+                  
+                        <p style="cursor: pointer" class="titul4" [routerLink]="'/casafaroles'">
+                            {{t.precios}}
+                        </p>
+                        <p style="font-size: 14px;
+                        margin-top: -13px;">
+                            Encuentra toda la informacion de este alojamiento aca.
+                        </p>
+                    </figcaption>
+                </figure>
+           
+            </div>
+        </div>   
+  
+      <div class="row">
+        <h1 class="my-5">Lugares que puedes visitar</h1>
+
+        <div class="col-md-3 portfolio-item">
+            <div class="t t-fluid h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/parqtayr/Parq.jpg" alt="" /></a>
+
+                <div class="t-body1">
+                    <h5 class="t-title">
+                        <a href="#">Parque Tayrona</a>
+                    </h5>
+                    <p class="t-text">
+                        Este es el Parque Natural predilecto por los viajeros que tomamos la buseta en Santa Marta para perdernos en una red de senderos que serpentean al otro lado de las olas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 portfolio-item">
+            <div class="t h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/minca/minca3.jpg" alt="" /></a>
+                <div class="t-body">
+                    <h5 class="t-title1">
+                        <a href="#">Minca</a>
+                    </h5>
+                    <p class="t-text1">
+                        Un paraiso ubicado en las estribaciones de la Sierra Nevada de Santa Marta, a unos 15 km del centro de la ciudad. Minca es la capital ecológica de la Sierra Nevada de Santa Marta. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 portfolio-item">
+            <div class="t h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/catesanp/quinta3.jpg" alt="" /></a>
+                <div class="t-body">
+                    <h5 class="t-title2">
+                        <a href="#">Quinta de San Pedro Alejandrino</a>
+                    </h5>
+                    <p class="t-text2">
+                        Construido en 1930 para honrar la memoria del Libertador Simón Bolívar al cumplirse el primer Centenario de su muerte, durante el gobierno del Doctor Enrique Olaya Herrera.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 portfolio-item">
+            <div class="t h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/bahia/marina.JPG" alt="" /></a>
+                <div class="t-body">
+                    <h5 class="t-title3">
+                        <a href="#">Bahia</a>
+                    </h5>
+                    <p class="t-text3">
+                        La bahía de Santa Marta es una bahía del mar Caribe ubicada al norte del departamento del Magdalena, en Colombia. Sus aguas bañan la ciudad de Santa Marta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 portfolio-item">
+            <div class="t h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/parqag/parqag4.jpg" alt="" /></a>
+                <div class="t-body">
+                    <h5 class="t-title4">
+                        <a href="#">Parque del Agua</a>
+                    </h5>
+                    <p class="t-text4">
+                        El agua, la naturaleza, la diversión y el deporte, se unen en un solo lugar, el nuevo Parque Temático del Agua de Santa Marta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-6 portfolio-item">
+            <div class="t h-100">
+                <a href="#"><img class="t-img-top" src="assets/img/playacrist/criatl1.jpg" alt="" /></a>
+                <div class="t-body">
+                    <h5 class="t-title5">
+                        <a href="#">Playa Cristal</a>
+                    </h5>
+                    <p class="t-text5">
+                        A solo 10 minutos en lancha desde Neguanje está Playa Cristal con aguas cristalinas, arenas blancas y hermosos arrecifes coralinos ideales para la práctica del careteo o snorkeling.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div> -->

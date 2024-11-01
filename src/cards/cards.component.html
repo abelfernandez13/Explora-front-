@@ -1,0 +1,121 @@
+<mat-card class="card10">
+
+    <!-- <div *ngIf="showPlaceholder" class="placeholder" style="font-size:large ;font-size: 19px;">$80000 COP noche </div> -->
+
+    <mat-card class="card2 col-md-4">
+          <div>
+            <h2 class="titulo">FECHAS</h2>
+            <span style="font-size: 13px;
+                font-weight: inherit;
+                color: gray;
+
+                margin-left:70px;
+    margin-top: 12px;
+    margin-right: 28px;">LLegada | Salida </span>
+        </div>
+        <div class="row">
+            <!-- <div class="col-xs-12 col-12 col-md-4 form-group">
+                <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker [bsValue]="bsValue" [minDate]="minDate" [maxDate]="maxDate" [daysDisabled]="[6,0]" [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
+            </div> -->
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+                <!-- <input type="text" placeholder="Fechas" class="form-control" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{ isAnimated: true }"> -->
+                <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{ rangeInputFormat: 'MM/DD/YYYY' }" (bsValueChange)="OnChangeValue()">
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="titulo1">Adultos y niños</h2>
+            </mat-panel-title>
+
+            <mat-panel-description>
+                <span style="font-size: 13px;
+                font-weight: inherit;
+                color: gray;
+                margin-left: 67px;">{{ count2 }} Adultos {{ count3 }} niños
+                </span>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="caja">
+            <div>
+                <!-- adultos -->
+                <h5 class="adultos">Adultos</h5>
+                <p class="subtitle">
+                    A partir de 15 años
+                </p>
+            </div>
+            <div class="circulos">
+                <button name="button" (click)="clickCount()" class="resta" mat-mini-fab no-border [disabled]="active">
+<mat-icon no-border>remove</mat-icon>
+</button>
+                <span>{{ count2 }}</span>
+
+                <button name="" (click)="clickCount1()" mat-mini-fab class="suma">
+<mat-icon>add</mat-icon>
+</button>
+            </div>
+        </div>
+        <hr />
+        <!--Niños -->
+        <div class="caja">
+            <div>
+                <h5 class="adultos">niños</h5>
+                <p class="subtitle">
+                    De 2 a 14 años
+                </p>
+            </div>
+            <div class="circulos1">
+                <button (click)="clickCount2()" class="resta" mat-mini-fab no-border [disabled]="active1">
+                <mat-icon no-border>remove</mat-icon>
+                </button>
+                <span>{{ count3 }}</span>
+                <!-- <textarea name="" (keyup)="onKey($event)"></textarea> -->
+
+                <button name="" (click)="clickCount3()" mat-mini-fab class="suma">
+                <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-card class="card5 col-md-4 ">
+        <div type="button" style="padding: 20px;
+        font-size: 13px;">${{precios}} X {{fechaDif}} noches = ${{ resolv }} COP </div>
+          <div d class="button1 col-md-2">
+
+         <button class="button2" mat-raised-button style="background-color: aqua;">
+            <form action="https://checkout.wompi.co/p/" method="GET">
+           
+              <input type="hidden" name="public-key" value="pub_test_YDxWl69pVUzZK3vNdJMCVphSP3L7ZCnE" />
+              <input type="hidden" name="currency" value="cop" />
+              <input type="hidden" name="amount-in-cents" id="monto" />
+              <input type="hidden" name="reference" value="3b4393baf56_65ed398ba2" />
+     
+              <input type="hidden" placeholder="habitacion" id="habitaciones"/>
+              <input type="hidden"  placeholder="camas"  id="camas"  />
+
+              <input type="hidden" name="signature:integrity" value="FIRMA_DE_INTEGRIDAD"/>
+              <input type="hidden" name="redirect-url" value="URL_REDIRECCION" />
+              <input type="hidden" name="tax-in-cents:vat" value="IVA_EN_CENTAVOS" />
+              <input type="hidden" name="tax-in-cents:consumption" value="IMPOCONSUMO_EN_CENTAVOS" />
+              <input type="hidden" name="customer-data:email" value="CORREO_DEL_PAGADOR" />
+              <input type="hidden" name="customer-data:full-name" value="NOMBRE_DEL_PAGADOR" />
+              <input type="hidden" name="customer-data:phone-number" value="NUMERO_DE_TELEFONO_DEL_PAGADOR" />
+              <input type="hidden" name="customer-data:legal-id" value="DOCUMENTO_DE_IDENTIDAD_DEL_PAGADOR" />
+              <input type="hidden" name="customer-data:legal-id-type" value="TIPO_DEL_DOCUMENTO_DE_IDENTIDAD_DEL_PAGADOR" />
+              <input type="hidden" name="shipping-address:address-line-1" value="DIRECCION_DE_ENVIO" />
+              <input type="hidden" name="shipping-address:country" value="PAIS_DE_ENVIO" />
+              <input type="hidden" name="shipping-address:phone-number" value="NUMERO_DE_TELEFONO_DE_QUIEN_RECIBE" />
+              <input type="hidden" name="shipping-address:city" value="CIUDAD_DE_ENVIO" />
+              <input type="hidden" name="shipping-address:region" value="REGION_DE_ENVIO" />
+
+              <button type="submit" value="submit" onclick="OnChangeValue()">Reservar</button>
+            </form>
+       
+            </button> 
+        </div>
+       </mat-card>
+</mat-card>
+
