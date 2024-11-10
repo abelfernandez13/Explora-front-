@@ -9,6 +9,7 @@ import { CasablancaComponent } from './casaB-202/casablanca.component';
 import { TorresVillamonicaComponent } from './torres-villamonica/torres-villamonica.component';
 import { CasaSarahComponent } from './casa-sarah/casa-sarah.component';
 import { AptoVillaCarmenComponent } from './apto-villa-carmen/apto-villa-carmen.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 
 const routes: Routes = [{
@@ -22,6 +23,10 @@ pathMatch: 'full'
 {
 path: 'home',
 component: HomeComponent
+  },
+{
+  path: "c/:id",
+  component: CardDetailsComponent,
 },
 {
   path: 'casafaroles',
