@@ -71,18 +71,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "Explorasantamarta:build"
+                      "buildTarget": "Explorasantamarta:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "Explorasantamarta:build:production"
+                          "buildTarget": "Explorasantamarta:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "Explorasantamarta:build"
+                      "buildTarget": "Explorasantamarta:build"
                     }
                 },
                 "test": {
