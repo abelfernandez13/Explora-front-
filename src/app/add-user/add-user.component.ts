@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadPropertysService } from '../shared/services/load-propertys.service';
 import { Router } from '@angular/router';
-import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {UntypedFormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 
 
@@ -35,7 +35,7 @@ data: any;
   title: string = '';
   description: string = '';
 
-  constructor(private load:LoadPropertysService,private router: Router,private _formBuilder: FormBuilder) { }
+  constructor(private load:LoadPropertysService,private router: Router,private _formBuilder: UntypedFormBuilder) { }
 
   enviarFormulario(title:string, description:string) {
 

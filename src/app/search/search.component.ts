@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -24,7 +24,7 @@ debounceTime(300)
   }
 
 
- search = new FormControl('');
+ search = new UntypedFormControl('');
 
 @Output('search') searchEmitter = new EventEmitter<string>(); 
 
