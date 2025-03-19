@@ -55,6 +55,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
+
 import { CardDetailsComponent } from './card-details/card-details.component';
 
 @NgModule({
@@ -95,6 +96,7 @@ import { CardDetailsComponent } from './card-details/card-details.component';
   ],
   imports: [
     BrowserModule,
+    MatExpansionModule,
     NgxSliderModule,
     AppRoutingModule,
     MatListModule,
