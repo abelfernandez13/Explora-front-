@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerConfig, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { Options, LabelType } from '@angular-slider/ngx-slider';
 // import { Cards } from 'src/app/model/cards';
 import { Lugares } from '../app/model/lugares';
 import { CardService } from 'src/app/shared/services/card.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 // import { tarjetas } from 'src/app/data/datos';
 // import { lugar } from 'src/app/data/lugares';
 
@@ -11,7 +15,10 @@ import { CardService } from 'src/app/shared/services/card.service';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
-  styleUrls: ['./cards.component.scss']
+  standalone:true,
+  styleUrls: ['./cards.component.scss'],
+  imports:[MatCardModule,MatExpansionModule,MatIconModule,MatTooltipModule,],
+  providers:[ BsDatepickerConfig ]
 })
 export class CardsComponent implements OnInit {
 

@@ -3,6 +3,8 @@ import { LoadPropertysService } from '../shared/services/load-propertys.service'
 import { Router } from '@angular/router';
 import {UntypedFormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -12,7 +14,9 @@ interface HtmlInputEvent extends Event {
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
+  standalone:true,
   styleUrls: ['./add-user.component.scss'],
+  imports: [MatStepperModule,MatFormFieldModule,ReactiveFormsModule]
  
 })
 export class AddUserComponent implements OnInit {
