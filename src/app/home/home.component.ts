@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NO_ERRORS_SCHEMA } from '@angular/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { SearchComponent } from '../search/search.component';
 import { Pipe,PipeTransform } from '@angular/core';
 // import { CardFilterPipe } from "../pipes/card-filter.pipe";
-import { LabelType, Options } from '@angular-slider/ngx-slider';
+import { LabelType, NgxSliderModule, Options, SliderComponent } from '@angular-slider/ngx-slider';
 import { MastercardsComponent } from "../mastercards/mastercards.component";
 // import { tarjetas } from '../data/datos';
 // import { Cards } from '../model/cards';
@@ -14,11 +14,23 @@ import { CardcontacComponent } from "../cardcontac/cardcontac.component";
 import { Photo } from '../interface/Photo';
 import { LoadPropertysService } from "../shared/services/load-propertys.service";
 import { Router } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { LoginComponent } from "../login/login.component";
+import { MatIconModule } from '@angular/material/icon';
+import { AppComponent } from '../app.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  standalone:true,
+  styleUrls: ['./home.component.scss'],
+  imports:[MatToolbarModule,MatCardModule,MatIconModule,CommonModule ],
+  schemas: [NO_ERRORS_SCHEMA], // Not recommended unless necessary
+  providers: [ LoginComponent,SliderComponent  ]
+ 
+ 
 })
 
 export class HomeComponent implements OnInit {
@@ -150,8 +162,8 @@ clickCount3(): void {
         this.photos = res;
         console.log(this.photos);
       },
-      err => console.log(err)
     ) 
+
   
 }
 

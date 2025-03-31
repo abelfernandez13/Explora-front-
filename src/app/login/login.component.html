@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p-button class="button1" (onClick)="showDialog()">
+    <button pripple="" class="p-ripple p-element p-button p-component" ng-reflect-ng-class="[object Object]" type="button"><p-avatar _ngcontent-dac-c72="" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" class="p-element" ng-reflect-image="https://primefaces.org/cdn/pri" ng-reflect-shape="circle"><div ng-reflect-ng-class="[object Object]" class="p-avatar p-component p-avatar-image p-avatar-circle"><img src="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" class="ng-star-inserted">
+        </div></p-avatar></button>
+  <p-avatar 
+    image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
+    shape="circle" >
+  </p-avatar>
+</p-button>
+
+<form [formGroup]="form" (ngSubmit)="onsubmit()">
+    <p-dialog
+    header="Header" 
+    [(visible)]="visible" 
+    [modal]="true" 
+    [style]="{ width: '25rem' }">
+        <ng-template pTemplate="header">
+            <div class="inline-flex align-items-center justify-content-center gap-2">
+                <p-avatar 
+                    image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
+                    shape="circle" ></p-avatar>
+                <span class="font-bold white-space-nowrap">
+                    Amy Elsner
+                </span>
+            </div>
+        </ng-template>
+
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">
+                Email
+            </label>
+            <input pInputText formControlName="email" class="flex-auto" type="email" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-5">
+            <label for="email" class="font-semibold w-6rem">Password</label>
+            <input pInputText formControlName="password" class="flex-auto" type="password" />
+        </div>
+
+   <!-- <div><hr><label>O</label><hr></div>     
+
+   <input [(ngModel)]="phoneNumber" placeholder="Enter phone number" />
+   <button (click)="sendLoginCode()">Send Code</button>
+   <div *ngIf="verificationCodeInputVisible">
+     <input [(ngModel)]="verificationCode" placeholder="Enter verification code" />
+     <button (click)="verifyLoginCode()">Verify Code</button>
+     <div id="recaptcha-container"></div>
+   </div> -->
+
+
+<label [routerLink]="['/register']" >Registrate </label>
+
+<div class="position-footer">
+        
+    <ul style="float: left;" class="list-inline social-buttons w-100">
+        <li class="list-inline-item" (click)="onClickgoogle()"  >
+             
+                <img class="face" src="assets/img/logo/redes/Facebook.jpg">
+            
+        </li>
+        <li class="list-inline-item">
+            <a href="#">
+                <img class="insta" src="assets/img/logo/redes/instagram.png">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="#">
+                <img class="twit" src="assets/img/logo/redes/twiter.png">
+            </a>
+        </li>
+    </ul>        
+</div>
+        <ng-template pTemplate="footer">
+            <p-button [routerLink]="['/login']"
+                label="Cancel" 
+                severity="secondary" 
+                (onClick)="visible = false">
+            </p-button>
+                <p-button type="submit" 
+                label="Save"
+                severity="secondary"    
+              >
+        </p-button>
+        </ng-template>
+</p-dialog>
+</form>
+
+</html>

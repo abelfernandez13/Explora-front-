@@ -1,19 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,NO_ERRORS_SCHEMA } from '@angular/core';
+import Swiper from 'swiper';
 @Component({
   selector: 'app-swipper-sanj',
-  template: `<swiper class="mySwiper">
-  <ng-template swiperSlide><img style="border-radius: 17px;" class="imagen" src="./assets/img/casasanj/sala3-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/sala.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/lavadero.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/cocina2-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template>
-  <ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/habita1-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/habitacion-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/habita2-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template
-  ><ng-template swiperSlide><img class="imagen" src="./assets/img/casasanj/baño1-Casasan jose-hospedaje-santamarta-colombia.jpg" alt=""></ng-template
-  >
-</swiper>`,
-  styleUrls: ['./swipper-sanj.component.scss']
+  templateUrl: './swipper-sanj.component.html',
+  styleUrls: ['./swipper-sanj.component.scss'],
+
+  providers: [Swiper]
+
 })
 export class SwipperSanjComponent implements OnInit {
 

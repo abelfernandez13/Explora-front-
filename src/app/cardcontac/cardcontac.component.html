@@ -1,8 +1,6 @@
 <mat-card class="card10">
 
-    <!-- <div *ngIf="showPlaceholder" class="placeholder" style="font-size:large ;font-size: 19px;">$80000 COP noche </div> -->
-
-    <mat-card class="card2 col-md-4">
+      <mat-card class="card2 col-md-4">
         <div>
             <h5>Cual es tu presupuesto</h5>
             <ngx-slider style="margin-top: 18%" [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
@@ -19,11 +17,8 @@
             margin-right: 28px;">LLegada | Salida </span>
         </div>
         <div class="row">
-            <!-- <div class="col-xs-12 col-12 col-md-4 form-group">
-                <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker [bsValue]="bsValue" [minDate]="minDate" [maxDate]="maxDate" [daysDisabled]="[6,0]" [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
-            </div> -->
-            <div class="col-xs-12 col-12 col-md-4 form-group">
-                <!-- <input type="text" placeholder="Fechas" class="form-control" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{ isAnimated: true }"> -->
+                        <div class="col-xs-12 col-12 col-md-4 form-group">
+              
                 <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{ rangeInputFormat: 'MM/DD/YYYY' }" (bsValueChange)="OnChangeValue()">
             </div>
         </div>
@@ -76,7 +71,7 @@
                 <mat-icon no-border>remove</mat-icon>
                 </button>
                 <span>{{ count3 }}</span>
-                <!-- <textarea name="" (keyup)="onKey($event)"></textarea> -->
+         
 
                 <button name="" (click)="clickCount3()" mat-mini-fab class="suma">
                 <mat-icon>add</mat-icon>
@@ -88,20 +83,6 @@
     <mat-card class="card5 col-md-4 ">
         <div type="button" style="padding: 20px;
         font-size: 13px;">${{precios}} X {{fechaDif}} noches = ${{ resolv }} COP </div>
-        
-        <!-- <div (click)="verIdpar()" type="pointer" class="card-search col-md-1" ml-3 style="width: 55%;
-        height: 30px;
-        margin-left: 58px;
-        cursor: pointer;
-        border-radius: 13px;
-        background-color: aqua;
-        font-size: 12px;">
-            <span style="margin-top: 7px;" class="fa fa-search"></span>
-            <span style="top: 4px;
-            margin-left: 16px;
-            position: absolute;
-            font-size: 15px;">Search</span>
-        </div> -->
-    </mat-card>
+            </mat-card>
 </mat-card>
 

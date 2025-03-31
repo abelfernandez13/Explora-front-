@@ -1,13 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { BsDatepickerConfig, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+=======
+
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
 import { Options, LabelType } from '@angular-slider/ngx-slider';
 // import { Cards } from 'src/app/model/cards';
 import { Lugares } from '../app/model/lugares';
 import { CardService } from 'src/app/shared/services/card.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+<<<<<<< HEAD
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+=======
+import { FormsModule } from '@angular/forms';
+import { BsDatepickerConfig, BsDatepickerDirective, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
 // import { tarjetas } from 'src/app/data/datos';
 // import { lugar } from 'src/app/data/lugares';
 
@@ -15,10 +25,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
+<<<<<<< HEAD
   standalone:true,
   styleUrls: ['./cards.component.scss'],
   imports:[MatCardModule,MatExpansionModule,MatIconModule,MatTooltipModule,],
   providers:[ BsDatepickerConfig ]
+=======
+  standalone: true,
+  styleUrls: ['./cards.component.scss'],
+  imports: [MatCardModule,MatExpansionModule,FormsModule,MatIconModule],
+  providers: [BsDatepickerDirective,BsDatepickerConfig]
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
 })
 export class CardsComponent implements OnInit {
 

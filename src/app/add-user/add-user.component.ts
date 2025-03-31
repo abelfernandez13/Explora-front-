@@ -1,10 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgModule, inject } from '@angular/core';
 import { LoadPropertysService } from '../shared/services/load-propertys.service';
 import { Router } from '@angular/router';
 import {UntypedFormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+<<<<<<< HEAD
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
+=======
+import { StepperModule } from 'primeng/stepper';
+import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { FormGroup, FormControl } from '@angular/forms';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
 
 
 
@@ -12,14 +23,21 @@ interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
 }
 @Component({
-  selector: 'app-add-user',
+  selector: 'app-add- user',
   templateUrl: './add-user.component.html',
+<<<<<<< HEAD
   standalone:true,
   styleUrls: ['./add-user.component.scss'],
   imports: [MatStepperModule,MatFormFieldModule,ReactiveFormsModule]
+=======
+  standalone: true,
+  styleUrls: ['./add-user.component.scss'],
+  imports: [StepperModule, ButtonModule,FloatLabelModule,ReactiveFormsModule,MatStepperModule,MatFormFieldModule]
+
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
  
 })
-export class AddUserComponent implements OnInit {
+export class AddUserComponent  { 
 
 currentIndex: number = 0;
 currentItem: any;
@@ -35,11 +53,16 @@ data: any;
 
   photoSelected: string | ArrayBuffer;
   file: File;
-
   title: string = '';
   description: string = '';
 
+<<<<<<< HEAD
   constructor(private load:LoadPropertysService,private router: Router,private _formBuilder: UntypedFormBuilder) { }
+=======
+
+
+  constructor(private load:LoadPropertysService,private router: Router,private _formBuilder: FormBuilder) { }
+>>>>>>> fe5eb72d (Actualizacion a angular 17)
 
   enviarFormulario(title:string, description:string) {
 
@@ -102,5 +125,3 @@ console.log('datos envi');
   }
 
 }
-
-
