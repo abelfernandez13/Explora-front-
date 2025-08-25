@@ -1,0 +1,88 @@
+<mat-card class="card10">
+
+      <mat-card class="card2 col-md-4">
+        <div>
+            <h5>Cual es tu presupuesto</h5>
+            <ngx-slider style="margin-top: 18%" [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+        </div>
+
+        <div>
+            <h2 class="titulo">FECHAS</h2>
+            <span style="font-size: 13px;
+            font-weight: inherit;
+            color: gray;
+            margin-left: 81px;
+            position: unset;
+            margin-top: 12px;
+            margin-right: 28px;">LLegada | Salida </span>
+        </div>
+        <div class="row">
+                        <div class="col-xs-12 col-12 col-md-4 form-group">
+              
+                <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue" [bsConfig]="{ rangeInputFormat: 'MM/DD/YYYY' }" (bsValueChange)="OnChangeValue()">
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="titulo1">Adultos y niños</h2>
+            </mat-panel-title>
+
+            <mat-panel-description>
+                <span style="font-size: 13px;
+                font-weight: inherit;
+                color: gray;
+                margin-left: 67px;">{{ count2 }} Adultos {{ count3 }} niños
+                </span>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="caja">
+            <div>
+                <!-- adultos -->
+                <h5 class="adultos">Adultos</h5>
+                <p class="subtitle">
+                    A partir de 15 años
+                </p>
+            </div>
+            <div class="circulos">
+                <button name="button" (click)="clickCount()" class="resta" mat-mini-fab no-border [disabled]="active">
+<mat-icon no-border>remove</mat-icon>
+</button>
+                <span>{{ count2 }}</span>
+
+                <button name="" (click)="clickCount1()" mat-mini-fab class="suma">
+<mat-icon>add</mat-icon>
+</button>
+            </div>
+        </div>
+        <hr />
+        <!--Niños -->
+        <div class="caja">
+            <div>
+                <h5 class="adultos">niños</h5>
+                <p class="subtitle">
+                    De 2 a 14 años
+                </p>
+            </div>
+            <div class="circulos1">
+                <button (click)="clickCount2()" class="resta" mat-mini-fab no-border [disabled]="active1">
+                <mat-icon no-border>remove</mat-icon>
+                </button>
+                <span>{{ count3 }}</span>
+         
+
+                <button name="" (click)="clickCount3()" mat-mini-fab class="suma">
+                <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-card class="card5 col-md-4 ">
+        <div type="button" style="padding: 20px;
+        font-size: 13px;">${{precios}} X {{fechaDif}} noches = ${{ resolv }} COP </div>
+            </mat-card>
+</mat-card>
+

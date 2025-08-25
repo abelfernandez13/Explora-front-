@@ -1,0 +1,128 @@
+@media (max-width:1560px) {
+    ngb-carousel {
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+    }
+    ngb-carousel img {
+        max-width: 100%;
+        width: 100%;
+        height: 418px;
+        margin-top: 2px;
+    }
+    ngb-carousel {
+        width: inherit;
+        height: inherit;
+    }
+    .carousel-inner {
+        overflow: visible;
+    }
+    .carousel-item {
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.2s ease-in-out, visibility 1.2s;
+        z-index: -1;
+    }
+    .carousel-item.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+    }
+    .carousel-control-prev {
+        z-index: 20;
+    }
+    .carousel-control-next {
+        z-index: 20;
+    }
+    .carousel-indicators {
+        z-index: 20;
+    }
+    // .texto {
+    //     font-family: 'Fira Sans', sans-serif;
+    //     font-family: 'Philosopher', sans-serif;
+    //     font-size: 45px;
+    // }
+}
+
+@media screen and (max-width:414px) {
+    ngb-carousel {
+        max-width: 100%;
+        width: 100%;
+    }
+    ngb-carousel img {
+        max-width: 100%;
+        width: 100%;
+        height: 158px;
+        margin-top: 0px;
+    }
+    ngb-carousel {
+        width: inherit;
+        height: inherit;
+    }
+    .carousel-inner {
+        overflow: visible;
+    }
+    .carousel-item {
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.2s ease-in-out, visibility 1.2s;
+        z-index: -1;
+    }
+    .carousel-item.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+    }
+    .carousel-control-prev {
+        z-index: 20;
+    }
+    .carousel-control-next {
+        z-index: 20;
+    }
+    .carousel-indicators {
+        z-index: 20;
+    }
+    .img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100%;
+        margin-top: 2%;
+    }
+}
+
+.img {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 1px;
+}
+
+@media screen and (max-width: 360px) {
+    .texto {
+        display: none;
+    }
+    .img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100%;
+        height: 158px;
+        margin-top: 1px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .texto {
+        display: none;
+    }
+    .img {
+        vertical-align: middle;
+        border-style: none;
+        width: 100%;
+        height: 158px;
+        margin-top: 1px;
+    }
+}

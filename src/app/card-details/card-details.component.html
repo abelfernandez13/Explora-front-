@@ -1,0 +1,289 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&family=Oswald&display=swap"
+  rel="stylesheet"
+/>
+<meta
+  name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"
+/>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="bg-dark">
+    <button mat-icon-button [routerLink]="'/home'">
+      <img class="marca" src="assets/img/logo/marca.ico" />
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  
+<div *ngIf="dato">
+    <h3 class="h5">{{ dato[1] }}</h3>
+    <!-- ubicacion -->
+    <!-- <h3> {{dato[7]}} </h3>  -->
+
+    <div class="container">
+
+      <div class="title1">
+        <h5 class="h6"> {{dato[2]}} </h5>
+
+
+<div *ngIf="imagePaths" class="gallery-wrapper">
+
+  <!-- Imagen principal -->
+  <div class="main-image" (click)="open(0)">
+    <picture>
+      <img [src]="imagePaths[0]" alt="Imagen principal" />
+    </picture>
+  </div>
+
+  <!-- Thumbnails secundarias -->
+  <div class="thumb-grid">
+    <div
+      class="thumb"
+      *ngFor="let img of imagePaths.slice(1, 6); let i = index"
+      (click)="open(i + 1)">
+      <picture>
+        <img [src]="img" alt="Imagen secundaria" />
+      </picture>
+    </div>
+
+    <!-- Mostrar todas las fotos -->
+    <div
+      class="thumb show-more"
+      *ngIf="imagePaths.length > 6"
+      (click)="open(6)">
+      <span>📷 Mostrar todas las fotos</span>
+    </div>
+  </div>
+
+</div>
+
+        <br><br>
+
+        <span class="span">8 huéspedes · 3 habitación · 7 cama · 2 baño</span>
+        <img class="img" src="assets/img/logo/avatar.jpg" />
+        <hr class="hr" />
+
+        <div>
+          <div>
+            <img
+              style="
+                margin-left: 0;
+                width: 26px;
+                height: 38px;
+                padding-left: 1px;
+                margin-top: 0px;
+              "
+              src="assets/img/logo/home.svg "
+            />
+            <span style="padding-left: 20px">Alojamiento entero</span>
+            <h6
+              style="
+                color: gray;
+                padding-left: 51px;
+                font-size: 13px;
+                margin-top: -5px;
+              "
+            >
+              Dispondrás de toda la vivienda (Apto) para ti.
+            </h6>
+          </div>
+          <div class="logos">
+            <img
+              style="
+                margin-left: 0;
+                width: 26px;
+                height: 38px;
+                padding-left: 1px;
+                margin-top: 0px;
+              "
+              src="assets/img/logo/clean.svg "
+            />
+            <span style="padding-left: 20px">Limpio y ordenado</span>
+            <h6
+              style="
+                color: gray;
+                padding-left: 51px;
+                font-size: 13px;
+                margin-top: -5px;
+              "
+            >
+              12 huéspedes recientes han dicho que este alojamiento está
+              impecable.
+            </h6>
+          </div>
+          <div class="logos">
+            <img
+              style="
+                margin-left: 0;
+                width: 26px;
+                height: 38px;
+                padding-left: 1px;
+                margin-top: 0px;
+              "
+              src="assets/img/logo/pay.svg "
+            />
+            <span style="padding-left: 20px">Pagos</span>
+            <h6
+              style="
+                color: gray;
+                padding-left: 51px;
+                font-size: 13px;
+                margin-top: -5px;
+              "
+            >
+              Cancelación gratuita durante 48 horas
+            </h6>
+          </div>
+        </div>
+        <hr class="hr1" />
+
+        <div class="col-md-7">
+               <div slot="start" style="margin-top: 2rem">
+            <p class="p">Catedral - 2min</p>
+            <p class="p">Juan Valdez - 2min</p>
+            <p class="p">Parque de los novios- 5min</p>
+            <p class="p">Marina - 10 min</p>
+          </div>
+        </div>
+
+        <hr class="hr2" />
+
+        <div class="title2">
+          <h3>Servicios</h3>
+        </div>
+
+        <div style="overflow: hidden">
+          <img
+            style="
+              margin-left: 0;
+              width: 26px;
+              height: 38px;
+              padding-left: 1px;
+              margin-top: 0px;
+            "
+            src="assets/img/logo/iconos/aire.svg "
+          />
+          <span style="padding-left: 20px">Aire acondicionado</span>
+
+          <div class="logos">
+            <img
+              style="
+                margin-left: 0;
+                width: 26px;
+                height: 38px;
+                padding-left: 1px;
+                margin-top: 0px;
+              "
+              src="assets/img/logo/iconos/cocina.svg"
+            /> 
+            <span style="padding-left: 20px">Utensilios de cocina</span>
+          </div>
+          <div class="logos">
+            <img
+              style="
+                margin-left: 0;
+                width: 26px;
+                height: 38px;
+                padding-left: 1px;
+                margin-top: 0px;
+              "
+              src="assets/img/logo/iconos/lavadora.svg"
+            />
+            <span style="padding-left: 20px">Lavadora</span>
+          </div>
+
+          <div class="service">
+            <div class="logos">
+              <img
+                style="
+                  margin-left: 0;
+                  width: 26px;
+                  height: 38px;
+                  padding-left: 1px;
+                  margin-top: 0px;
+                "
+                src="assets/img/logo/iconos/puerta.svg"
+              />
+              <span style="padding-left: 20px">Entrada independiente</span>
+            </div>
+
+            <div class="logos1">
+              <img
+                style="
+                  margin-left: 0;
+                  width: 26px;
+                  height: 38px;
+                  padding-left: 1px;
+                  margin-top: 0px;
+                "
+                src="assets/img/logo/iconos/tv.svg"
+              />
+              <span style="padding-left: 20px">Television</span>
+            </div>
+
+            <div class="logos2">
+              <img
+                style="
+                  margin-left: 0;
+                  width: 26px;
+                  height: 38px;
+                  padding-left: 1px;
+                  margin-top: 0px;
+                "
+                src="assets/img/logo/iconos/wifi.svg"
+              />
+              <span style="padding-left: 20px">Wifi</span>
+            </div>
+            <hr class="hr3" />
+            <!-- <app-cardcontac></app-cardcontac> -->
+            <hr class="hr3" />
+
+            <div class="title3">
+              <h3>Ubicacion</h3>
+            </div>
+
+            <div class="col-md-12">
+        <!-- Mapa -->
+<google-map 
+  [center]="{ lat: lat, lng: lng }"
+  [zoom]="zoom"
+  [height]="'300px'"
+  [width]="'100%'"
+  *ngIf="lat && lng"
+>
+  <map-marker [position]="{ lat: lat, lng: lng }"></map-marker>
+</google-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div> 
+    <footer class="py-5 bg-dark w-100">
+    <div class="position-footer">
+        
+            <ul class="list-inline social-buttons w-100">
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="face" src="assets/img/logo/redes/Facebook.jpg">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="insta" src="assets/img/logo/redes/instagram.png">
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <img class="twit" src="assets/img/logo/redes/twiter.png">
+                    </a>
+                </li>
+            </ul>        
+       </div>
+    </footer>
