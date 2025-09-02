@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './header.html',
 })
 export class Header {
-
+  loginUser() {
+    alert('login');
+  }
 }
