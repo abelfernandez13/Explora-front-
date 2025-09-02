@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-footer',
   imports: [],
   templateUrl: './footer.html',
+  styleUrls: ['./footer.css'],
 })
 export class Footer {}
