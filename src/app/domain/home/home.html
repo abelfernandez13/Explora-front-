@@ -1,4 +1,14 @@
 <div class="w-full flex justify-center">
+  @if (cardsStore.loading()) {
+  <p>Cargando...</p>
+  } @else {
+  <div class="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto px-4">
+    @for (card of cardsStore.cards(); track $index) {
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.description }}</p>
+    }
+  </div>
+  }
   <div class="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto px-4">
     @for (example of examples; track $index) {
     <app-example-card

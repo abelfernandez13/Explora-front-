@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CardsStore } from './../cards/cards-store';
+import { Component, inject, OnInit } from '@angular/core';
 import { ExampleCard } from '../../shared/components/example-card/example-card';
 
 @Component({
@@ -6,8 +7,13 @@ import { ExampleCard } from '../../shared/components/example-card/example-card';
   imports: [ExampleCard],
   templateUrl: './home.html',
 })
-export class Home {
-  adminCards = [{}];
+export class Home implements OnInit {
+  readonly cardsStore = inject(CardsStore);
+
+  ngOnInit(): void {
+    this.cardsStore.loadCards();
+  }
+
   examples = [
     {
       title: 'Example 1',
