@@ -7,9 +7,7 @@ import { ExampleCard } from '../../shared/components/example-card/example-card';
   templateUrl: './home.html',
 })
 export class Home {
-  adminCards = [{
-    
-  }];
+  adminCards = [{}];
   examples = [
     {
       title: 'Example 1',
