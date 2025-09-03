@@ -1,0 +1,11 @@
+<div class="w-full flex justify-center">
+  <div class="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto px-4">
+    @for (example of examples; track $index) {
+    <app-example-card
+      [title]="example.title"
+      [imageUrl]="example.imageUrl"
+      [description]="example.description"
+    />
+    }
+  </div>
+</div>
