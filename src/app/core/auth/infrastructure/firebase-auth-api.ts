@@ -1,4 +1,3 @@
-import { firebaseAuth } from '../../firebase/config';
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -9,6 +8,7 @@ import {
 } from 'firebase/auth';
 import { AuthApi } from '../application/api';
 import { User, AuthProvider, AuthCredentials } from '../domain/auth-types';
+import { firebaseAuth } from '@core/firebase/config';
 
 export class FirebaseAuthApi implements AuthApi {
   async signIn(provider: AuthProvider, credentials?: AuthCredentials): Promise<User> {
