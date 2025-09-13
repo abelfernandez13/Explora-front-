@@ -1,4 +1,18 @@
 <header class="flex justify-between max-w-4/5 mx-auto p-4">
   <img src="assets/logo.png" alt="Logo" />
-  <button (click)="loginUser()">login</button>
+  <div class="flex items-center gap-4">
+    @if (isAuthenticated()) {
+    <img
+      src="{{ user()?.photoURL }}"
+      alt="Avatar"
+      width="32"
+      height="32"
+      style="border-radius: 50%"
+    />
+    <span>{{ user()?.displayName || user()?.email }}</span>
+    <button (click)="logout()">logout</button>
+    } @else {
+    <button (click)="loginUser()">login</button>
+    }
+  </div>
 </header>
