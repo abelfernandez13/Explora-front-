@@ -1,10 +1,11 @@
 import { CardsStore } from './../cards/cards-store';
 import { Component, inject, OnInit } from '@angular/core';
 import { ExampleCard } from '../../shared/components/example-card/example-card';
+import { Cards } from "../cards/cards";
 
 @Component({
   selector: 'app-home',
-  imports: [ExampleCard],
+  imports: [ExampleCard, Cards],
   templateUrl: './home.html',
 })
 export class Home implements OnInit {

@@ -4,9 +4,7 @@
   } @else {
   <div class="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto px-4">
     @for (card of cardsStore.cards(); track $index) {
-    <h3>{{ card.title }}</h3>
-    <p>{{ card.description }}</p>
-    }
+    <app-cards />}
   </div>
   }
   <div class="grid grid-flow-col auto-cols-max gap-4 overflow-x-auto px-4">
