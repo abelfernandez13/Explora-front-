@@ -1,0 +1,40 @@
+<div class="space-y-3">
+  <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
+
+  <label class="block text-sm text-slate-700">Correo</label>
+  <input
+    class="w-full border border-slate-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+    type="email"
+    placeholder="tu@correo.com"
+    value="{{ email() }}"
+    (input)="email.set($event.target.value)"
+  />
+
+  <label class="block text-sm text-slate-700">Contraseña</label>
+  <input
+    class="w-full border border-slate-200 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+    type="password"
+    placeholder="••••••••"
+    value="{{ password() }}"
+    (input)="password.set($event.target.value)"
+  />
+
+  <div class="mt-4 flex gap-2">
+    <button
+      type="button"
+      (click)="submit()"
+      [disabled]="loading"
+      aria-busy="{{ loading }}"
+      class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 disabled:opacity-60 disabled:cursor-not-allowed active:translate-y-[1px] transition"
+    >
+      {{ primaryLabel }}
+    </button>
+  </div>
+
+  @if (error) {
+  <div class="flex items-start gap-2 text-red-600 text-sm mt-3">
+    <app-icon-alert class="mt-0.5"></app-icon-alert>
+    <div>{{ error }}</div>
+  </div>
+  }
+</div>
