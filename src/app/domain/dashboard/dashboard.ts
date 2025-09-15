@@ -13,6 +13,12 @@ export class Dashboard {
   private readonly cardsStore = inject(CardsStore);
   readonly step = signal(1);
   @ViewChild('dialogRef') dialogRef!: ElementRef<HTMLDialogElement>;
+
+  formData = {
+    title: '',
+    description: '',
+  };
+
   title = '';
   description = '';
 
