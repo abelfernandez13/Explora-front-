@@ -22,6 +22,15 @@ export class AuthStore {
     return user;
   }
 
+  async signUp(credentials?: AuthCredentials): Promise<User> {
+    if (typeof (this.authApi as any).signUp === 'function') {
+      const user = await this.authApi.signUp(credentials);
+      this._user.set(user);
+      return user;
+    }
+    throw new Error('Registration not supported');
+  }
+
   async signOut(): Promise<void> {
     await this.authApi.signOut();
     this._user.set(null);
