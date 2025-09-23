@@ -1,58 +1,27 @@
-import { Component, ElementRef, ViewChild, inject, signal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CardsStore } from '../cards/cards-store';
+import { ChangeDetectionStrategy, Component, ViewChild, signal } from '@angular/core';
+import { Sidebar } from '../../shared/sidebar/sidebar';
+import { AddCardComponent } from '../cards/add-card/add-card';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [FormsModule],
+  imports: [Sidebar, AddCardComponent],
   templateUrl: './dashboard.html',
-  styleUrls: ['./dashboard.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Dashboard {
-  private readonly cardsStore = inject(CardsStore);
-  readonly step = signal(1);
-  @ViewChild('dialogRef') dialogRef!: ElementRef<HTMLDialogElement>;
+  @ViewChild('addCardRef') addCardRef!: AddCardComponent;
+  protected readonly mobileOpen = signal(false);
 
-  formData = {
-    title: '',
-    description: '',
-  };
-
-  title = '';
-  description = '';
-
-  openDialog() {
-    this.dialogRef.nativeElement.showModal();
+  onAddCard() {
+    this.addCardRef?.open();
   }
 
-  closeDialog() {
-    this.dialogRef.nativeElement.close();
+  toggleMobile() {
+    this.mobileOpen.update((v) => !v);
   }
 
-  goToStep2(event: Event) {
-    event.preventDefault();
-    if (this.title.trim() && this.description.trim()) {
-      this.step.set(2);
-    }
-  }
-
-  saveCard() {
-    this.cardsStore.addCard({
-      title: this.title,
-      description: this.description,
-      price: 0,
-      imagePath: '',
-      rooms: 0,
-    });
-
-    this.closeDialog();
-    this.resetForm();
-  }
-
-  private resetForm() {
-    this.title = '';
-    this.description = '';
-    this.step.set(1);
+  closeMobile() {
+    this.mobileOpen.set(false);
   }
 }

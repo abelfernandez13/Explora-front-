@@ -5,4 +5,5 @@ export interface Card {
   price: number;
   rooms: number;
   imagePath: string;
+  address: string;
 }

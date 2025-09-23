@@ -1,0 +1,14 @@
+.dropzone {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.dropzone.dragging {
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
+  background-color: rgb(238 242 255);
+}
+
+.preview img {
+  aspect-ratio: 4/3;
+}

@@ -1,0 +1,228 @@
+<dialog
+  #dialogRef
+  class="rounded-xl shadow-2xl p-6 w-full max-w-2xl border border-gray-200 backdrop:bg-black/50 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+>
+  @if (step() === 1) {
+  <app-step title="Detalles básicos">
+    <form (ngSubmit)="goToStep2($event)" [formGroup]="form" class="space-y-5">
+      <div>
+        <label for="title" class="block text-sm font-semibold text-gray-800 mb-1">Título</label>
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          class="block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 sm:text-sm transition"
+          placeholder="Ingresa el título"
+        />
+        @if (form.controls.title.touched && form.controls.title.invalid) {
+        <p class="mt-1 text-sm text-red-600">Título es requerido (mín. 3 caracteres)</p>
+        }
+      </div>
+
+      <div>
+        <label for="description" class="block text-sm font-semibold text-gray-800 mb-1"
+          >Descripción</label
+        >
+        <textarea
+          id="description"
+          rows="4"
+          formControlName="description"
+          class="block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 sm:text-sm transition"
+          placeholder="Describe la propiedad"
+        ></textarea>
+        @if (form.controls.description.touched && form.controls.description.invalid) {
+        <p class="mt-1 text-sm text-red-600">Descripción es requerida (mín. 10 caracteres)</p>
+        }
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="price" class="block text-sm font-semibold text-gray-800 mb-1">Precio</label>
+          <input
+            type="number"
+            id="price"
+            formControlName="price"
+            class="block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 sm:text-sm transition"
+            placeholder="0"
+            min="0"
+            step="0.01"
+          />
+          @if (form.controls.price.touched && form.controls.price.invalid) {
+          <p class="mt-1 text-sm text-red-600">Precio debe ser 0 o mayor</p>
+          }
+        </div>
+        <div>
+          <label for="rooms" class="block text-sm font-semibold text-gray-800 mb-1"
+            >Habitaciones</label
+          >
+          <input
+            type="number"
+            id="rooms"
+            formControlName="rooms"
+            class="block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 sm:text-sm transition"
+            placeholder="0"
+            min="0"
+            step="1"
+          />
+          @if (form.controls.rooms.touched && form.controls.rooms.invalid) {
+          <p class="mt-1 text-sm text-red-600">Habitaciones debe ser 0 o mayor</p>
+          }
+        </div>
+      </div>
+
+      <menu class="flex justify-end gap-3 pt-4" step-actions>
+        <button
+          type="submit"
+          class="px-5 py-2 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition"
+        >
+          Siguiente
+        </button>
+        <button
+          type="button"
+          (click)="close()"
+          class="px-5 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1 transition"
+        >
+          Cancelar
+        </button>
+      </menu>
+    </form>
+  </app-step>
+  } @if (step() === 2) {
+  <app-step title="Imágenes">
+    <div class="space-y-5">
+      <app-image-uploader
+        [files]="images()"
+        [previews]="imagePreviews()"
+        [max]="maxImages"
+        (addFiles)="onAddFiles($event)"
+        (removeAt)="onRemoveAt($event)"
+      ></app-image-uploader>
+      <p class="text-sm text-gray-600">Seleccionadas: {{ imagesCount() }} / {{ maxImages }}</p>
+      <menu class="flex justify-between gap-3 pt-4" step-actions>
+        <button
+          type="button"
+          (click)="back(1)"
+          class="px-5 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1 transition"
+        >
+          Atrás
+        </button>
+        <div class="ml-auto flex gap-3">
+          <button
+            type="button"
+            (click)="goToStep3()"
+            class="px-5 py-2 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition"
+          >
+            Siguiente
+          </button>
+        </div>
+      </menu>
+    </div>
+  </app-step>
+  } @if (step() === 3) {
+  <app-step title="Ubicación">
+    <form [formGroup]="form" class="space-y-5" (ngSubmit)="goToReview()">
+      <div>
+        <label for="address" class="block text-sm font-semibold text-gray-800 mb-1"
+          >Dirección</label
+        >
+        <input
+          type="text"
+          id="address"
+          formControlName="address"
+          class="block w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 sm:text-sm transition"
+          placeholder="Calle, número, ciudad"
+        />
+        @if (form.controls.address.touched && form.controls.address.invalid) {
+        <p class="mt-1 text-sm text-red-600">Dirección es requerida (mín. 5 caracteres)</p>
+        }
+      </div>
+      <menu class="flex justify-between gap-3 pt-4" step-actions>
+        <button
+          type="button"
+          (click)="back(2)"
+          class="px-5 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1 transition"
+        >
+          Atrás
+        </button>
+        <button
+          type="submit"
+          class="px-5 py-2 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition"
+        >
+          Revisar
+        </button>
+      </menu>
+    </form>
+  </app-step>
+  } @if (step() === 4) {
+  <app-step title="Revisión">
+    <section>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div class="space-y-1">
+          <h4 class="text-lg font-semibold text-gray-900">{{ form.controls.title.value }}</h4>
+          <p class="text-sm text-gray-600 flex items-center gap-2">
+            <span
+              class="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700"
+              >Dirección</span
+            >
+            <span>{{ form.controls.address.value }}</span>
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-700 border border-indigo-200"
+            >$ {{ form.controls.price.value }}</span
+          >
+          <span
+            class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 border border-emerald-200"
+            >{{ form.controls.rooms.value }} habitaciones</span
+          >
+        </div>
+      </div>
+      <div class="mt-4 text-gray-800">
+        <p class="text-sm leading-6">{{ form.controls.description.value }}</p>
+      </div>
+      @if (imagePreviews().length) {
+      <div class="mt-6 space-y-3">
+        <div class="rounded-lg border overflow-hidden">
+          <img
+            [src]="imagePreviews()[0]"
+            alt="Principal"
+            class="w-full h-64 sm:h-72 md:h-80 object-cover"
+          />
+        </div>
+        @if (imagePreviews().length > 1) {
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+          @for (url of imagePreviews(); track url; let i = $index) { @if (i > 0) {
+          <div class="relative group">
+            <img [src]="url" alt="miniatura" class="h-20 w-full object-cover rounded-lg border" />
+            <div
+              class="absolute inset-0 rounded-lg bg-black/0 group-hover:bg-black/10 transition"
+            ></div>
+          </div>
+          } }
+        </div>
+        }
+      </div>
+      }
+    </section>
+    <menu class="flex justify-between gap-3 pt-2" step-actions>
+      <button
+        type="button"
+        (click)="back(3)"
+        class="px-5 py-2 bg-gray-200 text-gray-700 font-medium rounded-lg shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1 transition"
+      >
+        Atrás
+      </button>
+      <div class="ml-auto flex gap-3">
+        <button
+          type="button"
+          (click)="save()"
+          class="px-5 py-2 bg-green-600 text-white font-medium rounded-lg shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-1 transition"
+        >
+          Confirmar y guardar
+        </button>
+      </div>
+    </menu>
+  </app-step>
+  }
+</dialog>

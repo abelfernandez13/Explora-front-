@@ -1,9 +1,10 @@
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthStore } from '../auth/application/auth-store';
 
-export const authGuard: CanActivateFn = (route, state) => {
+// Blocks navigation to protected routes if user is not authenticated.
+// Redirects to home ("/") and returns false.
+export const authGuard: CanActivateFn = () => {
   const router = inject(Router);
   const auth = inject(AuthStore);
 
@@ -11,6 +12,6 @@ export const authGuard: CanActivateFn = (route, state) => {
     return true;
   }
 
-  router.navigate(['/']);
+  router.navigateByUrl('/');
   return false;
 };
