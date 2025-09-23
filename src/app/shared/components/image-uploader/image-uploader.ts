@@ -8,17 +8,14 @@ import { ChangeDetectionStrategy, Component, computed, input, output, signal } f
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImageUploader {
-  // Inputs
   readonly files = input<File[]>([]);
   readonly previews = input<string[]>([]);
   readonly max = input<number>(10);
   readonly disabled = input<boolean>(false);
 
-  // Outputs
   readonly addFiles = output<File[]>();
   readonly removeAt = output<number>();
 
-  // Local UI state
   readonly isDragging = signal(false);
   readonly countText = computed(() => `${this.files().length} / ${this.max()}`);
   readonly overLimit = computed(() => this.files().length > this.max());
@@ -34,7 +31,7 @@ export class ImageUploader {
     const files = Array.from(inputEl.files ?? []);
     const images = files.filter((f) => f.type.startsWith('image/'));
     if (images.length) this.addFiles.emit(images);
-    // reset to allow re-selecting same files
+
     inputEl.value = '';
   }
 

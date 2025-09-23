@@ -79,7 +79,6 @@ export class AddCardComponent {
     this.step.set(to);
   }
 
-  // Image handlers
   onAddFiles(files: File[]) {
     if (!files?.length) return;
     const current = this.images();

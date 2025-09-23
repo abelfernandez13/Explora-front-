@@ -1,10 +1,8 @@
 <div class="min-h-screen w-full flex bg-gray-50">
-  <!-- Desktop sidebar -->
   <div class="hidden md:block">
     <app-sidebar (addCard)="onAddCard()"></app-sidebar>
   </div>
 
-  <!-- Off-canvas mobile sidebar -->
   @if (mobileOpen()) {
   <div class="fixed inset-0 z-40">
     <div class="absolute inset-0 bg-black/40" (click)="closeMobile()"></div>
@@ -19,7 +17,6 @@
   <main class="flex-1 p-4 md:p-6">
     <header class="flex items-center justify-between mb-6">
       <div class="flex items-center gap-3">
-        <!-- Hamburger for mobile -->
         <button
           type="button"
           class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-300 bg-white shadow-sm"
@@ -50,6 +47,5 @@
     </section>
   </main>
 
-  <!-- Dialog host component -->
   <app-add-card #addCardRef></app-add-card>
 </div>

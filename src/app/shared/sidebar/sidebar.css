@@ -4,11 +4,11 @@
 }
 
 a.active {
-  background-color: #eef2ff; /* indigo-50 */
-  color: #4338ca; /* indigo-700 */
+  background-color: #eef2ff;
+  color: #4338ca;
   font-weight: 600;
 }
 
 a.active:hover {
-  background-color: #e0e7ff; /* indigo-100 */
+  background-color: #e0e7ff;
 }
