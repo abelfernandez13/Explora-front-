@@ -36,15 +36,20 @@
   @if (previews().length) {
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
     @for (url of previews(); track url; let i = $index) {
-    <div class="relative group">
-      <img [src]="url" alt="preview" class="h-28 w-full object-cover rounded-lg border" />
+    <div class="relative group cursor-pointer" (click)="onRemove(i)" title="Eliminar imagen">
+      <img
+        [src]="url"
+        alt="preview"
+        class="h-28 w-full object-cover rounded-lg border transition group-hover:opacity-60"
+      />
       <button
         type="button"
-        (click)="onRemove(i)"
-        class="absolute top-2 right-2 px-2 py-1 text-xs bg-red-600 text-white rounded opacity-0 group-hover:opacity-100 transition"
+        (click)="$event.stopPropagation(); onRemove(i)"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 py-1 px-2 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 shadow focus:outline-none focus:ring-2 focus:ring-red-500 transition"
         aria-label="Eliminar imagen"
+        title="Eliminar"
       >
-        Eliminar
+        <i class="bi bi-trash"></i>
       </button>
     </div>
     }

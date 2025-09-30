@@ -4,6 +4,6 @@ export interface Card {
   description: string;
   price: number;
   rooms: number;
-  imagePath: string;
   address: string;
+  imagePath?: string;
 }

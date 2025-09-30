@@ -23,9 +23,17 @@ export class CardsStore {
     });
   }
 
-  addCard(card: Omit<Card, 'id'>): void {
+  addCard(card: Omit<Card, 'id'>, images: File[]): void {
     this._loading.set(true);
-    this.api.addCard(card).subscribe({
+    const form = new FormData();
+    form.append('title', card.title);
+    form.append('description', card.description);
+    form.append('price', String(card.price));
+    form.append('rooms', String(card.rooms));
+    form.append('address', card.address);
+    images.forEach((file) => form.append('images', file, file.name));
+
+    this.api.addCard(form).subscribe({
       next: (data) => this._cards.update((cards) => [...cards, data]),
       error: () => this._cards.set([]),
       complete: () => this._loading.set(false),
