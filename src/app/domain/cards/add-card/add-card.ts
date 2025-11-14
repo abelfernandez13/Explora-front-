@@ -79,15 +79,14 @@ export class AddCardComponent {
     address.markAsTouched();
     if (address.valid) {
       const addr = address.value.trim();
-      // Try to re-use the API key already loaded in index.html; fallback to non-key embed
       const script = document.querySelector(
         'script[src*="maps.googleapis.com/maps/api/js"]'
       ) as HTMLScriptElement | null;
       const key = script ? new URL(script.src).searchParams.get('key') : null;
       const url = key
-        ? `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(
-            key
-          )}&q=${encodeURIComponent(addr)}`
+        ? `https://www.google.com/maps/embed/v1/place?key=AIzaSyAw-v-RxkcQjTBp90SOmHSyNEzVdXC7Rg8&q=${encodeURIComponent(
+            addr
+          )}`
         : `https://www.google.com/maps?q=${encodeURIComponent(addr)}&output=embed`;
       this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
       this.step.set(4);
