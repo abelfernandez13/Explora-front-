@@ -84,7 +84,7 @@ export class AddCardComponent {
       ) as HTMLScriptElement | null;
       const key = script ? new URL(script.src).searchParams.get('key') : null;
       const url = key
-        ? `https://www.google.com/maps/embed/v1/place?key=AIzaSyAw-v-RxkcQjTBp90SOmHSyNEzVdXC7Rg8&q=${encodeURIComponent(
+        ? `https://www.google.com/maps/embed/v1/place?key==${encodeURIComponent(
             addr
           )}`
         : `https://www.google.com/maps?q=${encodeURIComponent(addr)}&output=embed`;
