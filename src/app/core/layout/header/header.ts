@@ -1,17 +1,18 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, computed } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AuthStore } from '../../auth/application/auth-store';
-import { LoginModal } from '../../../domain/auth/login-modal';
-import { RegisterModal } from '../../../domain/auth/register-modal';
+import { RegisterModal } from 'src/app/domain/auth/register-modal';
+import { LoginModal } from 'src/app/domain/auth/login-modal';
+import { AuthStore } from '@core/auth/application/auth-store';
 
 @Component({
   selector: 'app-header',
   imports: [CommonModule, LoginModal, RegisterModal],
   templateUrl: './header.html',
+  styleUrl: './header.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Header {
-  // Inyecciones
   private readonly router = inject(Router);
   private readonly authStore = inject(AuthStore);
 
@@ -26,10 +27,16 @@ export class Header {
   readonly user = this.authStore.user;
   readonly isAuthenticated = this.authStore.isAuthenticated;
 
+  readonly avatarUrl = computed(() => {
+    const u: any = this.user();
+    console.log(this.user());
+
+    return (u?.photoURL || u?.photoUrl || 'assets/avatar.jpg') as string;
+  });
+
   readonly error = signal<string | null>(null);
   readonly loginModal = signal(false);
   readonly registerModal = signal(false);
-  // auth method: 'phone' | 'email'
   readonly authMethod = signal<'phone' | 'email'>('phone');
 
   selectMethod(method: 'phone' | 'email') {
@@ -135,7 +142,6 @@ export class Header {
     this.error.set(null);
     this._loading.set(true);
     try {
-      // Implementar signIn('facebook') en AuthStore cuando exista
       if (typeof (this.authStore as any).signIn === 'function') {
         await (this.authStore as any).signIn('facebook');
         await this.onAuthSuccess('login');

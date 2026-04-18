@@ -1,0 +1,35 @@
+@if (isBootstrapping()) {
+<div class="ub-skeleton" aria-label="Cargando usuario">
+  <div class="ub-avatar"></div>
+  <div class="ub-lines">
+    <div class="ub-line w-24"></div>
+    <div class="ub-line w-16"></div>
+  </div>
+</div>
+} @else if (error()) {
+<div class="ub-error" aria-label="Error usuario">
+  <span class="ub-error-icon">⚠️</span>
+  <div class="flex-1 min-w-0">
+    <p class="text-xs font-medium text-red-600 truncate">{{ error() }}</p>
+    <button type="button" class="ub-retry" (click)="logout()">Reintentar sesión</button>
+  </div>
+</div>
+} @else if (isAuthenticated()) {
+<div class="ub-user" aria-label="Usuario autenticado">
+  <img
+    [src]="user()?.photoURL || 'assets/avatar-placeholder.png'"
+    alt="Avatar"
+    width="40"
+    height="40"
+    class="ub-avatar-img"
+    loading="lazy"
+  />
+  <div class="min-w-0 flex-1">
+    <p class="ub-name">{{ user()?.displayName || user()?.email }}</p>
+    <p class="ub-email">{{ user()?.email }}</p>
+  </div>
+</div>
+<button type="button" (click)="logout()" class="ub-logout">Cerrar sesión</button>
+} @else {
+<p class="ub-anon">No has iniciado sesión.</p>
+}

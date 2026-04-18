@@ -1,0 +1,58 @@
+<div class="space-y-3">
+  <div
+    class="relative rounded-2xl border-2 border-dashed p-6 transition bg-white"
+    [class.border-indigo-500]="isDragging()"
+    [class.bg-indigo-50]="isDragging()"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave()"
+    (drop)="onDrop($event)"
+  >
+    <input
+      #fileInput
+      type="file"
+      accept="image/*"
+      multiple
+      class="hidden"
+      (change)="onFileChange($event)"
+    />
+
+    <div class="flex flex-col items-center justify-center text-center gap-2">
+      <div class="flex items-center gap-2 text-sm text-gray-600">
+        <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700">{{ countText() }}</span>
+        <span class="text-gray-400">máx. {{ max() }}</span>
+      </div>
+      <p class="text-gray-700">Arrastra y suelta imágenes aquí</p>
+      <button
+        type="button"
+        class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        (click)="onBrowseClick(fileInput)"
+      >
+        Seleccionar imágenes
+      </button>
+      <p class="text-xs text-gray-500">Formatos: JPG, PNG, WEBP. Límite de {{ max() }} imágenes.</p>
+    </div>
+  </div>
+
+  @if (previews().length) {
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+    @for (url of previews(); track url; let i = $index) {
+    <div class="relative group cursor-pointer" (click)="onRemove(i)" title="Eliminar imagen">
+      <img
+        [src]="url"
+        alt="preview"
+        class="h-28 w-full object-cover rounded-lg border transition group-hover:opacity-60"
+      />
+      <button
+        type="button"
+        (click)="$event.stopPropagation(); onRemove(i)"
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 py-1 px-2 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 shadow focus:outline-none focus:ring-2 focus:ring-red-500 transition"
+        aria-label="Eliminar imagen"
+        title="Eliminar"
+      >
+        <i class="bi bi-trash"></i>
+      </button>
+    </div>
+    }
+  </div>
+  }
+</div>

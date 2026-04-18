@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class CardsApi {
   private readonly http = inject(HttpClient);
-  private readonly baseUrl = '/photos';
+  private readonly baseUrl = '/card';
 
   getCards(): Observable<Card[]> {
     return this.http.get<Card[]>(this.baseUrl);
   }
 
-  addCard(card: Omit<Card, 'id'>): Observable<Card> {
-    return this.http.post<Card>(this.baseUrl, card);
+  addCard(body: Omit<Card, 'id'> | FormData): Observable<Card> {
+    return this.http.post<Card>(this.baseUrl, body);
   }
 }

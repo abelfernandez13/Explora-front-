@@ -1,7 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css');
 @import 'tailwindcss';
 
 *:not(input):not(textarea) {
   caret-color: transparent;
+}
+
+:root {
+  --brand-teal-50: #e6fffb;
+  --brand-teal-100: #c8fffa;
+  --brand-teal-300: #64e0d8;
+  --brand-teal-400: #36d6cc;
+  --brand-teal-500: #06efdf;
+  --brand-slate-700: #334155;
+}
+
+html,
+body {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(230, 255, 251, 0.7) 40%,
+    rgba(200, 255, 250, 0.5) 100%
+  );
+  color: var(--brand-slate-700);
+}
+
+.surface {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.btn-primary {
+  background-color: var(--brand-teal-400);
+  color: #0b1b1f;
+}
+.btn-primary:hover {
+  background-color: var(--brand-teal-500);
+}
+
+.main-content {
+  padding-top: 0;
 }

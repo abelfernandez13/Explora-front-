@@ -1,0 +1,55 @@
+<aside class="w-64 bg-white border-r border-gray-200 h-full p-4 flex flex-col">
+  <nav class="space-y-1 flex-1">
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="block px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Inicio
+    </a>
+    <button
+      type="button"
+      class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Tarjetas
+    </button>
+    <button
+      type="button"
+      class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Estadísticas
+    </button>
+    <button
+      type="button"
+      class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Usuarios
+    </button>
+    <button
+      type="button"
+      class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Ajustes
+    </button>
+    <button
+      type="button"
+      class="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-700 font-medium transition"
+    >
+      Ayuda
+    </button>
+
+    <div class="pt-3 mt-3 border-t border-gray-200"></div>
+    <button
+      type="button"
+      (click)="addCard.emit()"
+      class="w-full text-left px-3 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+    >
+      Agregar Tarjeta
+    </button>
+  </nav>
+
+  <div class="mt-4 pt-4 border-t border-gray-200">
+    <app-user-box />
+  </div>
+</aside>
